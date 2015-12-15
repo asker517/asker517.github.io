@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Vincent&#39;s Notebook || 左左的备忘录</title>
+  <title>Android Gradle | Vincent&#39;s Notebook || 左左的备忘录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hi, I’m Vincent.　　　　我是一个很普通的Android开发菜鸟，所以这里没有什么特别的技术分享，只是一些个人在开发过程中的一些笔记以及闲暇的时候的一些随心笔记。最终，我研究了半天还是决定用Hexo搭建自己一个简单的Github主页，Hexo是一个非常棒的框架，解救了像我这样完全不懂前端设计的但是又想瞎折腾的人群，最棒的地方是它有很多主题可以选择，Amazing , I Like I">
+  <meta name="description" content="Gradle 是以 Groovy 语言为基础，面向Java应用为主。基于DSL（领域特定语言）语法的自动化构建工具。使用Gradle构建打包Android应用已经是当下主流处理方式了。这里记录一下个人在Android开发过程中，项目工程中用到的一些Gradle配置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://onez.me/2015/11/21/hello-world/index.html">
+<meta property="og:title" content="Android Gradle">
+<meta property="og:url" content="http://onez.me/2015/12/15/android-gradle/index.html">
 <meta property="og:site_name" content="Vincent's Notebook || 左左的备忘录">
-<meta property="og:description" content="Hi, I’m Vincent.　　　　我是一个很普通的Android开发菜鸟，所以这里没有什么特别的技术分享，只是一些个人在开发过程中的一些笔记以及闲暇的时候的一些随心笔记。最终，我研究了半天还是决定用Hexo搭建自己一个简单的Github主页，Hexo是一个非常棒的框架，解救了像我这样完全不懂前端设计的但是又想瞎折腾的人群，最棒的地方是它有很多主题可以选择，Amazing , I Like I">
-<meta property="og:updated_time" content="2015-12-08T02:04:21.000Z">
+<meta property="og:description" content="Gradle 是以 Groovy 语言为基础，面向Java应用为主。基于DSL（领域特定语言）语法的自动化构建工具。使用Gradle构建打包Android应用已经是当下主流处理方式了。这里记录一下个人在Android开发过程中，项目工程中用到的一些Gradle配置。">
+<meta property="og:updated_time" content="2015-12-15T14:15:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Hi, I’m Vincent.　　　　我是一个很普通的Android开发菜鸟，所以这里没有什么特别的技术分享，只是一些个人在开发过程中的一些笔记以及闲暇的时候的一些随心笔记。最终，我研究了半天还是决定用Hexo搭建自己一个简单的Github主页，Hexo是一个非常棒的框架，解救了像我这样完全不懂前端设计的但是又想瞎折腾的人群，最棒的地方是它有很多主题可以选择，Amazing , I Like I">
+<meta name="twitter:title" content="Android Gradle">
+<meta name="twitter:description" content="Gradle 是以 Groovy 语言为基础，面向Java应用为主。基于DSL（领域特定语言）语法的自动化构建工具。使用Gradle构建打包Android应用已经是当下主流处理方式了。这里记录一下个人在Android开发过程中，项目工程中用到的一些Gradle配置。">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -130,12 +130,12 @@
 </aside>
 
       
-      <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main"><article id="post-android-gradle" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       
 	
-		<img src="/res/hello-world-banner.jpg" class="article-banner">
+		<img src="/res/android-gradle.png" class="article-banner">
 	
 
 
@@ -147,7 +147,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Android Gradle
     </h1>
   
 
@@ -155,8 +155,8 @@
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/11/21/hello-world/">
-      <time datetime="2015-11-20T16:00:00.000Z" itemprop="datePublished">2015-11-21</time>
+    <a href="/2015/12/15/android-gradle/">
+      <time datetime="2015-12-14T16:00:00.000Z" itemprop="datePublished">2015-12-15</time>
     </a>
   </div>
 
@@ -164,7 +164,7 @@
           
   <div class="article-category">
   	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/随笔/">随笔</a>
+    <a class="article-category-link" href="/categories/Android笔记/">Android笔记</a>
   </div>
 
         </div>
@@ -173,23 +173,43 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <p>Hi, I’m Vincent.<br>　　<br>　　我是一个很普通的Android开发菜鸟，所以这里没有什么特别的技术分享，只是一些个人在开发过程中的一些笔记以及闲暇的时候的一些随心笔记。最终，我研究了半天还是决定用<code>Hexo</code>搭建自己一个简单的<code>Github</code>主页，<code>Hexo</code>是一个非常棒的框架，解救了像我这样完全不懂前端设计的但是又想瞎折腾的人群，最棒的地方是它有很多主题可以选择，Amazing , I Like It.</p>
-<p>　　本主页搭建参考:</p>
-<blockquote>
-<p>Hexo：<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
-<p>搭 建：<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a> </p>
-<p>资 料：<a href="http://segmentfault.com/a/1190000002632530" target="_blank" rel="external">http://segmentfault.com/a/1190000002632530</a></p>
-</blockquote>
+        <p>　　<code>Gradle</code> 是以 <code>Groovy</code> 语言为基础，面向<code>Java</code>应用为主。基于<code>DSL</code>（领域特定语言）语法的自动化构建工具。使用<code>Gradle</code>构建打包<code>Android</code>应用已经是当下主流处理方式了。这里记录一下个人在<code>Android</code>开发过程中，项目工程中用到的一些<code>Gradle</code>配置。</p>
+<a id="more"></a>
+<h2 id="build-gradle">build.gradle</h2><ul>
+<li>Project(项目) <code>build.gradle</code>文件：配置全局(整个工程)的<code>gradle</code>设置</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//工程中gradle 全局配置</span></span><br><span class="line">ext &#123;</span><br><span class="line">    android = [</span><br><span class="line">        <span class="string">applicationId    :</span> <span class="string">"me.onez.androidgradle"</span>,</span><br><span class="line"><span class="label">        compileSdkVersion:</span> <span class="number">23</span>,</span><br><span class="line"><span class="label">        buildToolsVersion:</span> <span class="string">"23.0.2"</span>,</span><br><span class="line">        <span class="string">minSdkVersion    :</span> <span class="number">14</span>,</span><br><span class="line">        <span class="string">targetSdkVersion :</span> <span class="number">22</span>,</span><br><span class="line">        <span class="string">versionCode      :</span> <span class="number">1</span>,</span><br><span class="line">        <span class="string">versionName      :</span> <span class="string">"v1.0"</span></span><br><span class="line">    ]</span><br><span class="line"></span><br><span class="line">    dependencies = [</span><br><span class="line">        <span class="string">"support-v4"</span>     : <span class="string">"com.android.support:support-v4:23.1.1"</span>,</span><br><span class="line">        <span class="string">"appcompat-v7"</span>   : <span class="string">"com.android.support:appcompat-v7:23.1.1"</span>,</span><br><span class="line">        <span class="string">"support-design"</span> : <span class="string">"com.android.support:design:23.1.1"</span>,</span><br><span class="line">        <span class="string">"recyclerview-v7"</span>: <span class="string">"com.android.support:recyclerview-v7:23.1.1"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Module(模块)<code>build.gradle</code>文件：配置该模块的<code>gradle</code>设置</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">	...</span><br><span class="line">	  compileSdkVersion rootProject.ext.android.compileSdkVersion</span><br><span class="line">	  buildToolsVersion rootProject.ext.android.buildToolsVersion</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	  defaultConfig &#123;</span><br><span class="line">	    applicationId <span class="string">"me.onez.androidgradle"</span></span><br><span class="line">	    minSdkVersion rootProject.ext.android.minSdkVersion</span><br><span class="line">	    targetSdkVersion rootProject.ext.android.targetSdkVersion</span><br><span class="line">	    versionCode rootProject.ext.android.versionCode</span><br><span class="line">	    versionName rootProject.ext.android.versionName</span><br><span class="line">	  &#125;</span><br><span class="line">	  ...</span><br><span class="line">	  dependencies &#123;</span><br><span class="line">	  compile fileTree(<span class="string">dir:</span> <span class="string">'libs'</span>, <span class="string">include:</span> [<span class="string">'*.jar'</span>])</span><br><span class="line">	  testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">	  compile rootProject.ext.dependencies[<span class="string">"support-design"</span>]</span><br><span class="line">	  compile rootProject.ext.dependencies[<span class="string">"appcompat-v7"</span>]</span><br><span class="line">	  compile rootProject.ext.dependencies[<span class="string">"recyclerview-v7"</span>]</span><br><span class="line">	  compile rootProject.ext.dependencies[<span class="string">"support-v4"</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="gradle-properties">gradle.properties</h2><ul>
+<li>可以配置gradle的一些属性引用，譬如签名相关的信息，如果有些信息不想提交到版本库，也可以配置到<code>local.properties</code>文件中</li>
+</ul>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">KEYSTORE_PASSWORD=xxx</span><br><span class="line">KEY_PASSWORD=xxx</span><br><span class="line">KEYSTORE_FILE=./xxx.keystore</span><br><span class="line">KEY_ALIAS=xxx_key</span><br></pre></td></tr></table></figure>
+<p>然后在<code>gradle</code>中引用</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">signingConfigs &#123;</span><br><span class="line">    release &#123;</span><br><span class="line">      storeFile file(KEYSTORE_FILE)</span><br><span class="line">      storePassword KEYSTORE_PASSWORD</span><br><span class="line">      keyAlias KEY_ALIAS</span><br><span class="line">      keyPassword KEY_PASSWORD</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="product_flavor">product flavor</h3><ul>
+<li>打渠道包。</li>
+</ul>
+<p>首先修改<code>AndroidManifest.xml</code>文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta-data</span></span><br><span class="line">      <span class="attribute">android:name</span>=<span class="value">"CHANNEL_NAME"</span></span><br><span class="line">      <span class="attribute">android:value</span>=<span class="value">"$&#123;CHANNEL_VALUE&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接着配置Module <code>build.gradle</code>文件：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用于多渠道打包 flavor名如果是数字开头，必须用引号引起来</span></span><br><span class="line">  productFlavors &#123;</span><br><span class="line">    wandoujia &#123;</span><br><span class="line">      manifestPlaceholders = [<span class="string">CHANNEL_VALUE:</span> <span class="string">"wandoujia"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    xiaomi &#123;</span><br><span class="line">      manifestPlaceholders = [<span class="string">CHANNEL_VALUE:</span> <span class="string">"xiaomi"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">"360"</span> &#123;</span><br><span class="line">      manifestPlaceholders = [<span class="string">CHANNEL_VALUE:</span> <span class="string">"360"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>manifestPlaceholders 可以用来替换<code>AndroidManifest</code>中的占位符(<code>${xxx}</code>)</strong></p>
+<h2 id="Android_Gralde_Demo">Android Gralde Demo</h2><p><strong><a href="https://github.com/asker517/AndroidCodeBuckets/tree/master/AndroidGradle" target="_blank" rel="external">AndroidGradle</a></strong> On My Github</p>
+<h2 id="资料参考">资料参考</h2><p><a href="http://rinvay.github.io/android/2015/03/26/Gradle-Plugin-User-Guide(Translation" target="_blank" rel="external">Gradle插件用户指南(译)</a>/)</p>
+<p><a href="http://www.jayfeng.com/2015/11/07/Android%E6%89%93%E5%8C%85%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/#more" target="_blank" rel="external">Android打包的那些事</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://onez.me/2015/11/21/hello-world/" data-id="cii7h4ffp000ho9tyjr2vj8ir" class="article-share-link">分享到</a>
+      <a data-url="http://onez.me/2015/12/15/android-gradle/" data-id="cii7h4ffu000mo9tymr0odl2r" class="article-share-link">分享到</a>
       
-        <a href="http://onez.me/2015/11/21/hello-world/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://onez.me/2015/12/15/android-gradle/#ds-thread" class="article-comment-link">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gradle/">gradle</a></li></ul>
 
     </footer>
   </div>
@@ -197,15 +217,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/11/25/vim-key-map/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Vim key-map
-        
-      </div>
-    </a>
   
+    <a href="/2015/12/10/android-data-binding/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Android Data Binding</div>
+    </a>
   
 </nav>
 
@@ -215,7 +231,7 @@
 
 
   <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://onez.me/2015/11/21/hello-world/" data-title="Hello World" data-url="http://onez.me/2015/11/21/hello-world/">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://onez.me/2015/12/15/android-gradle/" data-title="Android Gradle" data-url="http://onez.me/2015/12/15/android-gradle/">
       <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
       </div>
   </section>
