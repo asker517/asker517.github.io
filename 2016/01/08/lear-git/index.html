@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Categories | Vincent&#39;s Notebook</title>
+  <title>Git笔记 | Vincent&#39;s Notebook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Team , Friends And Love .">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://onez.me/categories/index.html">
+  <meta name="description" content="勤能补拙 熟能生巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git笔记">
+<meta property="og:url" content="http://onez.me/2016/01/08/lear-git/index.html">
 <meta property="og:site_name" content="Vincent's Notebook">
-<meta property="og:description" content="Team , Friends And Love .">
-<meta property="og:updated_time" content="2015-12-07T07:44:37.000Z">
+<meta property="og:description" content="勤能补拙 熟能生巧">
+<meta property="og:updated_time" content="2016-01-17T15:20:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="Team , Friends And Love .">
+<meta name="twitter:title" content="Git笔记">
+<meta name="twitter:description" content="勤能补拙 熟能生巧">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -130,16 +130,88 @@
 </aside>
 
       
-      <section id="main"><section class="layout-wrap">
-  <div class="layout-title">
-    <span>Categories</span>
-  </div>
-  <div class="layout-wrap-inner list-categories">
+      <section id="main"><article id="post-lear-git" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android笔记/">Android笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Rx学习笔记/">Rx学习笔记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/自用笔记/">自用笔记</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a><span class="category-list-count">1</span></li></ul>
     
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git笔记
+    </h1>
+  
+
+        <div class="article-meta">
+          
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2016/01/08/lear-git/">
+      <time datetime="2016-01-07T16:00:00.000Z" itemprop="datePublished">2016-01-08</time>
+    </a>
   </div>
-</section></section>
+
+
+          
+  <div class="article-category">
+  	<i class="fa fa-folder"></i>
+    <a class="article-category-link" href="/categories/自用笔记/">自用笔记</a>
+  </div>
+
+        </div>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+                
+        <p>　　时光飞逝，不知不觉又是新的一年。接触Git也有快1年了，入职新公司后小伙伴们也都由Svn投入了Git的怀抱。大家用了也有一阵子了，大的问题也没什么，但是很多小伙伴还是很浅的使用，仅仅是clone，pull，push……而且大多数都很依赖客户端，可能压根只是记住了Svn对应的检出，更新，提交……<br>　　<a id="more"></a><br>　　所以这阵子项目经理安排我希望让我给大家普及一下Git相关的东西。想想自己更喜欢命令行，也不知道从哪里讲起呢……其实我更希望小伙伴们能更多的用命令行来解决，而不是客户端用鼠标点击，因为如此每一行命令自己都清楚的能知道自己在干什么。Git命令很多，但是常用的也就那么些，其实并没有想的那么复杂，在我刚开始的时候我也很惧怕那么多的字母组合，但是习惯了之后发现真的很好用。借此机会总结一下常用的Git命令。</p>
+<h2 id="个人配置">个人配置</h2><p>安装完成Git之后，首先当然是要配置账户信息，为了之后方便的和remote仓库交互操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//--global&#21442;&#25968;&#20026;&#20840;&#23616;Git&#35774;&#32622;&#65292;&#21487;&#20197;&#22312;&#33258;&#24049;&#19981;&#21516;&#20179;&#24211;&#19979;&#21333;&#29420;&#37197;&#32622;&#65292;&#10;git config --global user.name youUserName&#10;git config --global user.email yourEmailAddress&#10;git config --list#&#26597;&#30475;&#37197;&#32622;&#30340;&#20449;&#24687;</span><br></pre></td></tr></table></figure>
+<h2 id="新建仓库">新建仓库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init //&#21021;&#22987;&#21270;&#26412;&#22320;Git&#20179;&#24211;&#10;git status //&#33719;&#21462;&#24403;&#21069;&#20179;&#24211;&#29366;&#24577;</span><br></pre></td></tr></table></figure>
+<h2 id="仓库克隆">仓库克隆</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone gitRepoPath //&#20811;&#38534;Git&#24037;&#31243;&#21040;&#26412;&#22320;&#10;//git clone https://github.com/asker517/AndroidCodeBuckets&#10;//&#20811;&#38534;&#21040;&#33258;&#23450;&#20041;&#25991;&#20214;&#22841;&#10;//git clone https://github.com/asker517/AndroidCodeBuckets localDir</span><br></pre></td></tr></table></figure>
+<h2 id="本地操作">本地操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add newFileName //.&#25110;*&#36319;&#36394;&#65288;&#25152;&#26377;&#65289;&#26032;&#25991;&#20214;&#10;git rm -f * //&#31227;&#38500;&#25991;&#20214;&#10;git rm --cached * //&#21462;&#28040;&#36319;&#36394;&#10;git mv file_from file_to //&#37325;&#21629;&#21517;&#36319;&#36394;&#25991;&#20214;&#10;&#10;git log //&#26597;&#30475;&#25552;&#20132;&#35760;&#24405;&#10; &#10;git commit //&#25552;&#20132;&#26356;&#26032;&#10;git commit -m &#39;message&#39; //&#38468;&#24102;&#25552;&#20132;&#31616;&#21333;&#30340;&#25552;&#20132;&#20449;&#24687;&#10;git commit -a //&#36339;&#36807;&#20351;&#29992;&#26242;&#23384;&#21306;&#22495;&#65292;&#25226;&#25152;&#26377;&#24050;&#32463;&#36319;&#36394;&#36807;&#30340;&#25991;&#20214;&#26242;&#23384;&#36215;&#26469;&#19968;&#24182;&#25552;&#20132;&#10;git commit --amend //&#20462;&#25913;&#26368;&#21518;&#19968;&#27425;&#25552;&#20132;&#10; &#10;git reset HEAD * //&#21462;&#28040;&#24050;&#32463;&#26242;&#23384;&#30340;&#25991;&#20214;&#10; &#10;git checkout -- file //&#21462;&#28040;&#23545;&#25991;&#20214;&#30340;&#20462;&#25913;&#65288;&#20174;&#26242;&#23384;&#21306;&#21435;&#38500;file&#65289;&#10;git checkout branch|tag|commit -- file_name //&#20174;&#20179;&#24211;&#21462;&#20986;file&#35206;&#30422;&#24403;&#21069;&#20998;&#25903;&#10;git checkout -- . //&#20174;&#26242;&#23384;&#21306;&#21435;&#38500;&#25991;&#20214;&#35206;&#30422;&#24037;&#20316;&#21306;</span><br></pre></td></tr></table></figure>
+<h2 id="分支管理">分支管理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch //&#21015;&#20986;&#26412;&#22320;&#20998;&#25903;&#10;git branch -r //&#21015;&#20986;&#36828;&#31471;&#20998;&#25903;&#10;git branch -a //&#21015;&#20986;&#25152;&#26377;&#20998;&#25903;&#10;git branch -v //&#26597;&#30475;&#21508;&#20010;&#20998;&#25903;&#26368;&#21518;&#19968;&#20010;&#25552;&#20132;&#23545;&#35937;&#30340;&#20449;&#24687;&#10;git branch --merge //&#26597;&#30475;&#24050;&#32463;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10;git branch --no-merge //&#26597;&#30475;&#20026;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10; &#10;git branch test //&#26032;&#24314;test&#20998;&#25903;&#10;git checkout test //&#20999;&#25442;&#21040;test&#20998;&#25903;&#10;git checkout -b test //&#26032;&#24314;+&#20999;&#25442;&#21040;test&#20998;&#25903;&#10;git checkout -b test dev //&#22522;&#20110;dev&#26032;&#24314;test&#20998;&#25903;&#65292;&#24182;&#20999;&#25442;&#10; &#10;git branch -d test //&#21024;&#38500;test&#20998;&#25903;&#10;git branch -D test //&#24378;&#21046;&#21024;&#38500;test&#20998;&#25903;&#10; &#10;git merge test //&#23558;test&#20998;&#25903;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#10;git rebase master //&#23558;master&#20998;&#20043;&#19978;&#36229;&#21069;&#30340;&#25552;&#20132;&#65292;&#21464;&#22522;&#21040;&#24403;&#21069;&#20998;&#25903;</span><br></pre></td></tr></table></figure>
+<h2 id="远端">远端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch originname branchname //&#25289;&#21435;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git merge originname branchname //&#21512;&#24182;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git push originname branchname //&#25512;&#36865;&#21040;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git push originname localbranch:serverbranch //&#25512;&#36865;&#21040;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10; &#10;git checkout -b test origin/dev //&#22522;&#20110;&#36828;&#31471;dev&#26032;&#24314;test&#20998;&#25903;&#10; &#10;git push origin :server //&#21024;&#38500;&#36828;&#31471;&#20998;&#25903;</span><br></pre></td></tr></table></figure>
+<h2 id="标签">标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag //&#21015;&#20986;&#29616;&#26377;&#26631;&#31614;  &#10;git tag v0.1 //&#26032;&#24314;&#26631;&#31614;&#10;git tag -a v0.1 -m &#39;my version 1.4&#39; //&#26032;&#24314;&#24102;&#27880;&#37322;&#26631;&#31614;&#10; &#10;git checkout tagname //&#20999;&#25442;&#21040;&#26631;&#31614;&#10; &#10;git push origin v1.5 //&#25512;&#36865;&#20998;&#25903;&#21040;&#28304;&#19978;&#10;git push origin --tags //&#19968;&#27425;&#24615;&#25512;&#36865;&#25152;&#26377;&#20998;&#25903;&#10; &#10;git tag -d v0.1 //&#21024;&#38500;&#26631;&#31614;&#10;git push origin :refs/tags/v0.1 //&#21024;&#38500;&#36828;&#31243;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
+<p>##参考资料<br><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Pro Git</a><br><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">LearnGitBranching</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://onez.me/2016/01/08/lear-git/" data-id="cijioxdet000hl0tyhytjic3p" class="article-share-link">分享到</a>
+      
+        <a href="http://onez.me/2016/01/08/lear-git/#ds-thread" class="article-comment-link">评论</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/12/15/android-gradle/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Android Gradle</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="http://onez.me/2016/01/08/lear-git/" data-title="Git笔记" data-url="http://onez.me/2016/01/08/lear-git/">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
+      </div>
+  </section>
+
+</section>
       
         <aside id="sidebar">
   
