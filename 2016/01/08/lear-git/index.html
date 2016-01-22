@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://onez.me/2016/01/08/lear-git/index.html">
 <meta property="og:site_name" content="Vincent's Notebook">
 <meta property="og:description" content="勤能补拙 熟能生巧">
-<meta property="og:updated_time" content="2016-01-17T15:20:56.000Z">
+<meta property="og:updated_time" content="2016-01-22T04:34:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git笔记">
 <meta name="twitter:description" content="勤能补拙 熟能生巧">
@@ -174,12 +174,12 @@
 <h2 id="分支管理">分支管理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch //&#21015;&#20986;&#26412;&#22320;&#20998;&#25903;&#10;git branch -r //&#21015;&#20986;&#36828;&#31471;&#20998;&#25903;&#10;git branch -a //&#21015;&#20986;&#25152;&#26377;&#20998;&#25903;&#10;git branch -v //&#26597;&#30475;&#21508;&#20010;&#20998;&#25903;&#26368;&#21518;&#19968;&#20010;&#25552;&#20132;&#23545;&#35937;&#30340;&#20449;&#24687;&#10;git branch --merge //&#26597;&#30475;&#24050;&#32463;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10;git branch --no-merge //&#26597;&#30475;&#20026;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#30340;&#20998;&#25903;&#10; &#10;git branch test //&#26032;&#24314;test&#20998;&#25903;&#10;git checkout test //&#20999;&#25442;&#21040;test&#20998;&#25903;&#10;git checkout -b test //&#26032;&#24314;+&#20999;&#25442;&#21040;test&#20998;&#25903;&#10;git checkout -b test dev //&#22522;&#20110;dev&#26032;&#24314;test&#20998;&#25903;&#65292;&#24182;&#20999;&#25442;&#10; &#10;git branch -d test //&#21024;&#38500;test&#20998;&#25903;&#10;git branch -D test //&#24378;&#21046;&#21024;&#38500;test&#20998;&#25903;&#10; &#10;git merge test //&#23558;test&#20998;&#25903;&#21512;&#24182;&#21040;&#24403;&#21069;&#20998;&#25903;&#10;git rebase master //&#23558;master&#20998;&#20043;&#19978;&#36229;&#21069;&#30340;&#25552;&#20132;&#65292;&#21464;&#22522;&#21040;&#24403;&#21069;&#20998;&#25903;</span><br></pre></td></tr></table></figure>
 <h2 id="远端">远端</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch originname branchname //&#25289;&#21435;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git merge originname branchname //&#21512;&#24182;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git push originname branchname //&#25512;&#36865;&#21040;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10;git push originname localbranch:serverbranch //&#25512;&#36865;&#21040;&#36828;&#31471;&#19978;&#25351;&#23450;&#20998;&#25903;&#10; &#10;git checkout -b test origin/dev //&#22522;&#20110;&#36828;&#31471;dev&#26032;&#24314;test&#20998;&#25903;&#10; &#10;git push origin :server //&#21024;&#38500;&#36828;&#31471;&#20998;&#25903;</span><br></pre></td></tr></table></figure>
 <h2 id="标签">标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag //&#21015;&#20986;&#29616;&#26377;&#26631;&#31614;  &#10;git tag v0.1 //&#26032;&#24314;&#26631;&#31614;&#10;git tag -a v0.1 -m &#39;my version 1.4&#39; //&#26032;&#24314;&#24102;&#27880;&#37322;&#26631;&#31614;&#10; &#10;git checkout tagname //&#20999;&#25442;&#21040;&#26631;&#31614;&#10; &#10;git push origin v1.5 //&#25512;&#36865;&#20998;&#25903;&#21040;&#28304;&#19978;&#10;git push origin --tags //&#19968;&#27425;&#24615;&#25512;&#36865;&#25152;&#26377;&#20998;&#25903;&#10; &#10;git tag -d v0.1 //&#21024;&#38500;&#26631;&#31614;&#10;git push origin :refs/tags/v0.1 //&#21024;&#38500;&#36828;&#31243;&#26631;&#31614;</span><br></pre></td></tr></table></figure>
-<p>##参考资料<br><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Pro Git</a><br><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">LearnGitBranching</a></p>
+<h2 id="参考资料">参考资料</h2><p><a href="http://git-scm.com/book/zh/v2" target="_blank" rel="external">Pro Git</a><br><a href="http://pcottle.github.io/learnGitBranching/" target="_blank" rel="external">LearnGitBranching</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://onez.me/2016/01/08/lear-git/" data-id="cijioxdet000hl0tyhytjic3p" class="article-share-link">分享到</a>
+      <a data-url="http://onez.me/2016/01/08/lear-git/" data-id="cijp71p3t000hjmfydfzl8mif" class="article-share-link">分享到</a>
       
         <a href="http://onez.me/2016/01/08/lear-git/#ds-thread" class="article-comment-link">评论</a>
       
