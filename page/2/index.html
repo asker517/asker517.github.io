@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>About Learn RxJava | Vincent&#39;s Notebook</title>
+  <title>Vincent&#39;s Notebook</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RxJava其实出来已经很久了，一直以来只是知道，但是并没有去认真的学习过，最近看了一些相关的RxJava相关的资料，亲手把他们Coding了一遍，发现确实用起来感觉很爽。于是我打算在这里记录一下自己学习RxJava的一些笔记和资料供自己Mark一下，方便以后查阅。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="About Learn RxJava">
-<meta property="og:url" content="http://onez.me/2015/12/02/learn-rxjava/index.html">
+  <meta name="description" content="Team , Friends And Love .">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vincent's Notebook">
+<meta property="og:url" content="http://onez.me/page/2/index.html">
 <meta property="og:site_name" content="Vincent's Notebook">
-<meta property="og:description" content="RxJava其实出来已经很久了，一直以来只是知道，但是并没有去认真的学习过，最近看了一些相关的RxJava相关的资料，亲手把他们Coding了一遍，发现确实用起来感觉很爽。于是我打算在这里记录一下自己学习RxJava的一些笔记和资料供自己Mark一下，方便以后查阅。">
-<meta property="og:updated_time" content="2015-12-08T02:23:47.000Z">
+<meta property="og:description" content="Team , Friends And Love .">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="About Learn RxJava">
-<meta name="twitter:description" content="RxJava其实出来已经很久了，一直以来只是知道，但是并没有去认真的学习过，最近看了一些相关的RxJava相关的资料，亲手把他们Coding了一遍，发现确实用起来感觉很爽。于是我打算在这里记录一下自己学习RxJava的一些笔记和资料供自己Mark一下，方便以后查阅。">
+<meta name="twitter:title" content="Vincent's Notebook">
+<meta name="twitter:description" content="Team , Friends And Love .">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -130,12 +129,13 @@
 </aside>
 
       
-      <section id="main"><article id="post-learn-rxjava" class="article article-type-post" itemscope itemprop="blogPost">
+      <section id="main">
+      <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       
 	
-		<img src="/res/rx-java-banner.jpg" class="article-banner">
+		<a href="/2015/11/21/hello-world/" itemprop="url"><img src="/res/hello-world-banner.jpg" class="article-banner"></a>
 	
 
 
@@ -146,8 +146,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      About Learn RxJava
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/21/hello-world/">Hello World</a>
     </h1>
   
 
@@ -155,8 +155,8 @@
           
   <div class="article-date">
     <i class="fa fa-calendar"></i>
-    <a href="/2015/12/02/learn-rxjava/">
-      <time datetime="2015-12-01T16:00:00.000Z" itemprop="datePublished">2015-12-02</time>
+    <a href="/2015/11/21/hello-world/">
+      <time datetime="2015-11-20T16:00:00.000Z" itemprop="datePublished">2015-11-21</time>
     </a>
   </div>
 
@@ -164,7 +164,7 @@
           
   <div class="article-category">
   	<i class="fa fa-folder"></i>
-    <a class="article-category-link" href="/categories/Rx学习笔记/">Rx学习笔记</a>
+    <a class="article-category-link" href="/categories/随笔/">随笔</a>
   </div>
 
         </div>
@@ -173,77 +173,36 @@
     <div class="article-entry" itemprop="articleBody">
       
                 
-        <p>　　<code>RxJava</code>其实出来已经很久了，一直以来只是知道，但是并没有去认真的学习过，最近看了一些相关的<code>RxJava</code>相关的资料，亲手把他们Coding了一遍，发现确实用起来感觉很爽。于是我打算在这里记录一下自己学习<code>RxJava</code>的一些笔记和资料供自己Mark一下，方便以后查阅。</p>
-<a id="more"></a>
-<h2 id="基本概念">基本概念</h2><ul>
-<li>观察/订阅者：<code>Observer</code>/<code>Subscriber</code>，它决定事件触发的时候将有怎样的行为<strong>(事件接收方)</strong>。</li>
-<li>被观察者：<code>Observable</code>，它决定什么时候触发事件以及触发怎样的事件<strong>(事件发送方)</strong>。</li>
-<li>订阅：<code>Subscribe</code>，用<code>subscribe()</code>方法将<strong>观察者</strong>和<strong>被观察者</strong>关联起来。</li>
-</ul>
-<p><code>Subscribe</code>代码形式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">observable.subscribe(observer);</span><br><span class="line"><span class="comment">// 或者：</span></span><br><span class="line">observable.subscribe(subscriber);</span><br></pre></td></tr></table></figure>
-<h2 id="线程控制">线程控制</h2><ul>
-<li><p>subscribeOn(): 指定 <code>subscribe()</code> 所发生的线程，即Observable.OnSubscribe 被激活时所处的线程。或者叫做事件产生的线程，<strong>可以从事件发出的开端就造成影响，只能调用一次(可多次调用，只有第一次有作用)，默认情况下，链上的操作符将会在调用<code>.subsribeOn()</code>的这个线程上执行任务</strong>。</p>
-</li>
-<li><p>observeOn(): 指定 <code>Subscriber</code> 所运行在的线程。或者叫做事件消费的线程，<strong>指定的是它之后的操作所在的线程，可多次调用完成线程切换</strong>。</p>
-</li>
-</ul>
-<p>典型线程变幻形式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Observable.just(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>) <span class="comment">// IO 线程，由 subscribeOn() 指定</span></span><br><span class="line">    .subscribeOn(Schedulers.io())</span><br><span class="line">    .observeOn(Schedulers.newThread())</span><br><span class="line">    .map(mapOperator) <span class="comment">// 新线程，由 observeOn() 指定</span></span><br><span class="line">    .observeOn(Schedulers.io())</span><br><span class="line">    .map(mapOperator2) <span class="comment">// IO 线程，由 observeOn() 指定</span></span><br><span class="line">    .observeOn(AndroidSchedulers.mainThread) </span><br><span class="line">    .subscribe(subscriber);  <span class="comment">// Android 主线</span></span><br></pre></td></tr></table></figure>
-<h3 id="doOnSubscribe()">doOnSubscribe()</h3><p>　　<code>Subscriber</code>的<code>onStart()</code>方法由于在<code>subscribe()</code>发生时就被调用了，因此不能指定线程，而是只能执行在<code>subscribe()</code>被调用时的线程。这就导致如果<code>onStart()</code>中含有对线程有要求的代码（例如在界面上显示一个 ProgressBar，这必须在主线程执行），将会有线程非法的风险，因为有时你无法预测<code>subscribe()</code>将会在什么线程执行。</p>
-<p>　　而与<code>Subscriber.onStart()</code>相对应的，有一个方法<code>Observable.doOnSubscribe()</code>。它和 <code>Subscriber.onStart()</code> 同样是在 <code>subscribe()</code> 调用后而且在事件发送前执行，但区别在于它可以指定线程。默认情况下， <code>doOnSubscribe()</code> 执行在 <code>subscribe()</code> 发生的线程；而<strong><em>如果在 <code>doOnSubscribe()</code> 之后有 <code>subscribeOn()</code> 的话，它将执行在离它最近的 <code>subscribeOn()</code> 所指定的线程。</em></strong></p>
-<p>典型流程代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Observable.create(<span class="keyword">new</span> Observable.OnSubscribe&lt;Object&gt;() &#123;</span><br><span class="line">          <span class="annotation">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">(Subscriber&lt;? <span class="keyword">super</span> Object&gt; subscriber)</span> </span>&#123;</span><br><span class="line">              <span class="comment">//通常处理一些耗时操作任务 eg. network request</span></span><br><span class="line">              <span class="comment">//取决于第一个subscribeOn()调用的线程</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).subscribeOn(Schedulers.io()).doOnSubscribe(<span class="keyword">new</span> Action0() &#123;</span><br><span class="line">          <span class="annotation">@Override</span></span><br><span class="line">          <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">call</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              <span class="comment">//通常做预处理逻辑 eg. showProgressBar</span></span><br><span class="line">              <span class="comment">//取决于之后第一个subscribeOn()的线程</span></span><br><span class="line">          &#125;</span><br><span class="line">      &#125;).subscribeOn(AndroidSchedulers.mainThread()) <span class="comment">//只会影响到doOnSubscribe()的线程</span></span><br><span class="line">          .observeOn(AndroidSchedulers.mainThread()) <span class="comment">//切换到UI线程</span></span><br><span class="line">          .subscribe(<span class="keyword">new</span> Subscriber&lt;Object&gt;() &#123;</span><br><span class="line">              <span class="annotation">@Override</span></span><br><span class="line">              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompleted</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                  <span class="comment">//do in UI thread</span></span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">              <span class="annotation">@Override</span></span><br><span class="line">              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onError</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line">                  <span class="comment">//do in UI thread</span></span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">              <span class="annotation">@Override</span></span><br><span class="line">              <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onNext</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">                  <span class="comment">//do in UI thread</span></span><br><span class="line">              &#125;</span><br><span class="line">          &#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="资料参考">资料参考</h2><p><a href="https://github.com/ReactiveX/RxJava" target="_blank" rel="external">RxJava</a>　　<a href="https://github.com/ReactiveX/RxAndroid" target="_blank" rel="external">RxAndroid</a>　　<a href="https://github.com/JakeWharton/RxBinding" target="_blank" rel="external">RxBinding</a></p>
-<p><a href="http://gank.io/post/560e15be2dca930e00da1083" target="_blank" rel="external">给 Android 开发者的 RxJava 详解</a></p>
-<p><a href="http://www.jianshu.com/p/72911b9ba2d7" target="_blank" rel="external">在正确的线程上观察Observable</a></p>
-<p><a href="https://github.com/lzyzsd/Awesome-RxJava" target="_blank" rel="external">Awesome-RxJava</a></p>
+        <p>Hi, I’m Vincent.<br>　　<br>　　我是一个很普通的Android开发菜鸟，所以这里没有什么特别的技术分享，只是一些个人在开发过程中的一些笔记以及闲暇的时候的一些随心笔记。最终，我研究了半天还是决定用<code>Hexo</code>搭建自己一个简单的<code>Github</code>主页，<code>Hexo</code>是一个非常棒的框架，解救了像我这样完全不懂前端设计的但是又想瞎折腾的人群，最棒的地方是它有很多主题可以选择，Amazing , I Like It.</p>
+<p>　　本主页搭建参考:</p>
+<blockquote>
+<p>Hexo：<a href="https://hexo.io/" target="_blank" rel="external">https://hexo.io/</a></p>
+<p>搭 建：<a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">http://www.jianshu.com/p/465830080ea9</a> </p>
+<p>资 料：<a href="http://segmentfault.com/a/1190000002632530" target="_blank" rel="external">http://segmentfault.com/a/1190000002632530</a></p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://onez.me/2015/12/02/learn-rxjava/" data-id="cikxm2cel000am0ty2t6cpkah" class="article-share-link">分享到</a>
+      <a data-url="http://onez.me/2015/11/21/hello-world/" data-id="cikxm2ceq000mm0ty169f38q4" class="article-share-link">分享到</a>
       
-        <a href="http://onez.me/2015/12/02/learn-rxjava/#ds-thread" class="article-comment-link">评论</a>
+        <a href="http://onez.me/2015/11/21/hello-world/#ds-thread" class="article-comment-link">评论</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/RxJava/">RxJava</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2015/12/10/android-data-binding/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Android Data Binding
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/11/25/vim-key-map/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">Vim key-map</div>
-    </a>
-  
-</nav>
-
-
-  
 </article>
 
 
-  <section id="comments">
-    <div id="ds-thread" class="ds-thread" data-thread-key="http://onez.me/2015/12/02/learn-rxjava/" data-title="About Learn RxJava" data-url="http://onez.me/2015/12/02/learn-rxjava/">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by DuoShuo.</a></noscript>
-      </div>
-  </section>
 
-</section>
+    
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      </nav>
+    </section>
       
         <aside id="sidebar">
   
